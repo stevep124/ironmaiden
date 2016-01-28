@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Iron Maiden Album</title>
+		<meta name="viewport" content="width=device-width">
+		<script src="/bower_components/angular/angular.js"></script>
+		<script src="js/albums.js"></script>
+
+		<link href="styles/styles.css" rel="stylesheet" />
+	</head>
+	<body ng-app="IronMaiden">
+		<div ng-controller="AlbumCtrl">
+			<ul>
+				<li ng-repeat="album in albums | filter:{name: albumName}">
+					<div class="album"><img ng-src="{{ album.images[1].url}}" ></div>
+					<p class="album-title">{{ album.name }}</p>
+				</li>
+			</ul>
+			<input type="text" ng-model="albumName">
+		</div>
+		
+	</body>
+</html>

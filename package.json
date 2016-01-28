@@ -1,0 +1,11 @@
+{
+  "name": "iron-maiden",
+  "version": "1.0.0",
+  "description": "Technical Test Application to obtain Iron Maiden Albums from Spotify",
+  "main": "app.js",
+  "author": "stephen.perry83@gmail.com",
+  "dependencies": {
+    "express": "^4.13.4",
+    "request": "^2.67.0"
+  }
+}

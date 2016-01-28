@@ -17,3 +17,28 @@ angular.module('IronMaiden',[])
 
 
 })
+
+.directive('album', function()
+{
+	return {
+		restrict: 'E',
+		replace : true,
+		template : '<div class="album"><img ng-src="{{ image.url }}"><p class="album-title">{{ name }}</p></div>',
+		scope : {
+			images : '=',
+			name : '='
+		},
+		link : function( $scope, $element, $attrs )
+		{
+			$scope.image = {};
+			
+			angular.forEach( $scope.images, function( item )
+			{
+				if ( item.height === 300 )
+				{
+					$scope.image = item;
+				}
+			})
+		}
+	}
+})

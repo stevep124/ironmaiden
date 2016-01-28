@@ -9,6 +9,8 @@ var artistID = '6mdiAmATAx73kdxrNrnlao';
 var clientID = '33f2a5d1a27d48abb81abd86e4297d94';
 var clientSecret = 'c0b0be16ca2a4ac8bc2bd1c9ded058df';
 
+app.use(express.static('public'));
+
 //define the route
 app.use('/ironmaiden', function(req, res, next ){
 
@@ -63,7 +65,7 @@ app.use('/ironmaiden', function(req, res, next ){
 				message : 'Access Token not accessible',
 				error : error
 			}
-			res.json{ errorMsg };
+			res.json( errorMsg );
 		}
 
     })
@@ -72,5 +74,5 @@ app.use('/ironmaiden', function(req, res, next ){
 
 //listen on port for any requests
 app.listen(3000, function () {
-  console.log('Iron Maiden App is ready to rock');
+  console.log('The Iron Maiden App is ready to rock \\m/');
 });

@@ -23,7 +23,7 @@ angular.module('IronMaiden',[])
 	return {
 		restrict: 'E',
 		replace : true,
-		template : '<div class="album"><img ng-src="{{ image.url }}"><p class="album-title">{{ name }}</p></div>',
+		template : '<div class="album"><img ng-src="{{ image.url }}"><div class="overlay"><p class="album-title">{{ name }}</p></div></div>',
 		scope : {
 			images : '=',
 			name : '='
@@ -31,7 +31,7 @@ angular.module('IronMaiden',[])
 		link : function( $scope, $element, $attrs )
 		{
 			$scope.image = {};
-			
+
 			angular.forEach( $scope.images, function( item )
 			{
 				if ( item.height === 300 )
